@@ -48,14 +48,14 @@ function finishEdit(){
   title = !title.match(/\S/g) ? "無題":title 
 
   txt = `タイトル:${title}\n
-          日付:${today}\n
-          時間:${time} \n
-          内容:${contents}`
+日付:${today}\n
+時間:${time} \n
+内容:${contents}`
 }
 
 function downloadBtn_clicked(evt) {
   evt.preventDefault();
-  const blob = new Blob([txt], {type: 'text/plain'});
+  const blob = new Blob([txt], {type: 'text/plain'}); 
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
 
