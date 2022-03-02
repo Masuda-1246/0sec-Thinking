@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "postcss styles.css -o index.css"
+    "build": "TAILWIND_MODE=watch postcss styles.css -o index.css -w"
   },
   "keywords": [],
   "author": "",

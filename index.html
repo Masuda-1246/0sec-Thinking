@@ -1,22 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <title>Download Test 1</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0秒思考</title>
   <script src="index.js"></script>
   <link rel="stylesheet" href="index.css">
 </head>
-<body>
-  <h1 class="text-6xl text-blue-500 m-5">0秒思考</h1>
-  <div id="a"></div>
-  <p>タイトル</p>
-  <p><input type="text" id="title"></p>
-  <p id="time"></p>
-  <p>内容</p>
-  <p><textarea name="example1" cols="30" rows="5" id="contents"></textarea></p>
-  <p><button id="start">start</button></p>
-  <p><button id="stop">stop</button></p>
-  <p><button id="ok">OK</button></p>
-  <p><button id="button1">Download Text</button></p>
+<body class="">
+
+  <h1 class="text-center text-6xl  m-5 drop-shadow-lg">0秒思考</h1>
+
+  <p class="text-3xl m-1 text-right" id="today"></p>
+
+  <div class="justfy-center m-3 border rounded-lg drop-shadow-lg">
+    <div class="flex m-2 text-2xl w-auto">タイトル:</div>
+    <div class="flex">
+      <input class="rounded-lg border border-solid border-indigo-600 m-2 drop-shadow-md w-3/4" type="text" id="title" size="40" oninput="canStart()">
+      <button disabled class="px-3 py-1 rounded-lg border bg-indigo-400 text-white hover:bg-indigo-500 p-2 m-2 drop-shadow-md disabled:bg-gray-300" id="start">start</button>
+    </div>
+  </div>
+
+  <div class="hidden" id="content">
+    <p class="m-2 text-2xl w-auto">内容:</p>
+    
+      <div class="flex">
+        <textarea class="m-2 rounded-lg border border-solid border-indigo-600 drop-shadow-md w-4/5" name="example1" rows="10" id="contents"></textarea>
+        <div class="relative">
+          <div class ="border-dashed border-indigo-600 border-2 w-auto text-center align-bottom place-self-start my-2 mx-1" id="time"></div>
+          <button class="px-3 py-1 rounded-lg border bg-indigo-400 text-white hover:bg-indigo-500 p-2 m-1 drop-shadow-md bottom-0 absolute disabled:bg-gray-300" id="ok">OK</button>
+        </div>
+      </div>  
+    
+  </div>
+
+  <div class="hidden" id="download">
+    <p>ダウンロード:
+      <button class="px-3 py-1 rounded-lg border bg-indigo-400 text-white hover:bg-indigo-500 p-2 m-1 drop-shadow-md" id="downloadBtn">Download Text</button>
+    </p>
+  </div>
+
+  <script>
+    function canStart(){
+      document.getElementById('start').disabled = false
+    }
+  </script>
 </body>
 </html>
+
